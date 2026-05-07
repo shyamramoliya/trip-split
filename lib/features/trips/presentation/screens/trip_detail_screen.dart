@@ -64,7 +64,7 @@ class _TripDetailScreenState extends ConsumerState<TripDetailScreen> with Single
                       end: Alignment.bottomCenter,
                       colors: [
                         Theme.of(context).colorScheme.primary,
-                        Theme.of(context).colorScheme.primaryDark ?? const Color(0xFF0D4A8A),
+                        const Color(0xFF0D4A8A),
                       ],
                     ),
                   ),
@@ -144,6 +144,7 @@ class _TripDetailScreenState extends ConsumerState<TripDetailScreen> with Single
             ParticipantBalanceScreen(tripId: widget.tripId),
           ],
         ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (_tabController.index == 0) {
@@ -178,5 +179,5 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  bool get shouldRebuild(_SliverAppBarDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
 }
